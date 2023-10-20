@@ -1,5 +1,5 @@
 # Trabajo Final C# .NET Framework
-## En desarrollo
+## Finalizado
 
 Este proyecto se enfocó en la creación de un sistema de gestión de catálogos que emula un entorno de comercio electrónico, haciendo uso de las tecnologías C#, .NET Framework, ADO .NET y SQL Server Management. El propósito principal fue diseñar una aplicación que permitiera a los usuarios explorar una tienda en línea y gestionar sus perfiles de usuario de manera eficiente.
 
