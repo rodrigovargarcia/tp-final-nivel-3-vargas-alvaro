@@ -17,7 +17,7 @@
                             <div class="card-body d-flex flex-column">
                                 <div class="mt-auto">
                                     <h5 class="card-title">
-                                        <asp:Button Text='<%#Eval("Nombre") %>' runat="server" ID="btnArticulo" CommandName="ArticuloDetalle" CommandArgument='<%#Eval("Id") %>' OnClick="btnArticulo_Click"/>
+                                        <asp:Button Text='<%#Eval("Nombre") %>' runat="server" ID="btnArticulo" CommandName="ArticuloDetalle" CommandArgument='<%#Eval("Id") %>' CssClass="btn btn-light" Style="font-size:20px;font-weight:600;" OnClick="btnArticulo_Click"/>
                                     </h5>
                                     <p class="card-text"><%#Eval("Descripcion") %></p>
                                     <div class="row" style="justify-content: space-between;">
