@@ -12,7 +12,7 @@ namespace CatalogoWebMaxP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!(Page is Error || Page is Login || Page is Registro || Page is Default))
+            if(!(Page is Error || Page is Login || Page is Registro || Page is Default || Page is VerDetalle))
             {
                 if (!(Seguridad.sesionActiva(Session["usuario"])))
                     Response.Redirect("Login.aspx", false);

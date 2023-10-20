@@ -56,6 +56,10 @@ namespace CatalogoWebMaxP
                     txtImagen.Text = seleccionado.ImagenUrl.ToString();
                     txtImagen_TextChanged(sender, e);
                 }
+                else
+                {
+                    btnEliminar.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -68,6 +72,8 @@ namespace CatalogoWebMaxP
         {
             try
             {
+                if (!Page.IsValid)
+                    return;
                 Articulos nuevo = new Articulos();
                 ArticulosNegocio negocio = new ArticulosNegocio();                
                 nuevo.Nombre = txtNombre.Text;

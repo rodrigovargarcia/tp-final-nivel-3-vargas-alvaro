@@ -16,7 +16,7 @@ namespace CatalogoWebMaxP
             try
             {
                 Users user = (Users)Session["usuario"];
-                if (Seguridad.sesionActiva(Session["usuario"]))
+                if (Seguridad.sesionActiva(Session["usuario"]) && !IsPostBack)
                 {                
                     txtNombre.Text = user.Nombre;
                     txtApellido.Text = user.Apellido;
@@ -32,12 +32,11 @@ namespace CatalogoWebMaxP
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
-        {
+        {            
             Users user = (Users)Session["usuario"];
             string ruta = Server.MapPath("./Images/");
             UsersNegocio negocio = new UsersNegocio();
-            txtImagenPerfil.PostedFile.SaveAs(ruta + "perfil-" + user.Id + ".jpg");
-
+            txtImagenPerfil.PostedFile.SaveAs(ruta + "perfil-" + user.Id + ".jpg");            
             try
             {
                 // Escribimos img

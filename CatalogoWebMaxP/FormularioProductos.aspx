@@ -17,6 +17,7 @@
                 <div class="mb-3">
                     <label for="txtNombre" class="form-label">Nombre</label>
                     <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
+                    <asp:RequiredFieldValidator ErrorMessage="Debes completar este campo" ControlToValidate="txtNombre" BorderColor="Red" runat="server" />
                 </div>
                 <div class="mb-3">
                     <label for="txtCodigo" class="form-label">Codigo</label>
@@ -25,6 +26,7 @@
                 <div class="mb-3">
                     <label for="txtPrecio" class="form-label">Precio</label>
                     <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" />
+                    <asp:RequiredFieldValidator ErrorMessage="Debes completar este campo" BorderColor="Red" ControlToValidate="txtPrecio" runat="server" />
                 </div>
                 <div class="mb-3">
                     <label for="ddlMarca" class="form-label">Marca</label>
@@ -60,7 +62,7 @@
                 <asp:Button Text="Aceptar" ID="btnAceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" runat="server" />
             </div>
             <div class="col-md-4">
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">Eliminar</button>
+                <asp:Button type="button" id="btnEliminar" runat="server" class="btn btn-danger" data-bs-toggle="modal" Text="Eliminar" data-bs-target="#myModal"></asp:Button>
             </div>
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

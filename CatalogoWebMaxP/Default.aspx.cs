@@ -73,5 +73,14 @@ namespace CatalogoWebMaxP
                 Response.Redirect("/Error.aspx");
             }
         }
+
+        protected void btnArticulo_Click(object sender, EventArgs e)
+        {
+            Articulos articulo = new Articulos();
+            string idArticulo = ((Button)sender).CommandArgument;
+
+            articulo.Id = int.Parse(idArticulo);
+            Response.Redirect("/VerDetalle.aspx?id=" + idArticulo);
+        }
     }
 }

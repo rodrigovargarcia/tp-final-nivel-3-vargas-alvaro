@@ -16,6 +16,7 @@
                 <div class="mb-3">
                     <label class="form-label">Email</label>
                     <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" />
+                    <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El email es requerido" ControlToValidate="txtEmail" runat="server" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Contraseña</label>

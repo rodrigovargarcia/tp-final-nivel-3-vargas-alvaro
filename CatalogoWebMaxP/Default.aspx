@@ -16,7 +16,9 @@
                             <img class="card-img-top" src="<%#Eval("ImagenUrl") %>" alt="Alternate Text" />
                             <div class="card-body d-flex flex-column">
                                 <div class="mt-auto">
-                                    <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                                    <h5 class="card-title">
+                                        <asp:Button Text='<%#Eval("Nombre") %>' runat="server" ID="btnArticulo" CommandName="ArticuloDetalle" CommandArgument='<%#Eval("Id") %>' OnClick="btnArticulo_Click"/>
+                                    </h5>
                                     <p class="card-text"><%#Eval("Descripcion") %></p>
                                     <div class="row" style="justify-content: space-between;">
                                         <div class="col-4">

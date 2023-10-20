@@ -18,6 +18,10 @@ namespace CatalogoWebMaxP
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             UsersNegocio negocio = new UsersNegocio();
             Users usuario = new Users();
 

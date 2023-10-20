@@ -24,7 +24,8 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" />
+                    <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" required="required" />
+                    <asp:RegularExpressionValidator ErrorMessage="Por favor, proporcione un email válido" ValidationExpression="^[\w\.-]+@[\w\.-]+\.\w+$" ControlToValidate="txtEmail" runat="server" />
                 </div>
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>

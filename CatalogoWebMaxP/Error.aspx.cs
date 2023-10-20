@@ -16,5 +16,10 @@ namespace CatalogoWebMaxP
                 lblMensaje.Text = Session["error"].ToString();  
             }
         }
+
+        protected void btnError_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/", false);
+        }
     }
 }

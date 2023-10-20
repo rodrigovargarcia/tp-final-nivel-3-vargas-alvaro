@@ -16,18 +16,21 @@ namespace CatalogoWebMaxP
         {
             try
             {
-                if (Seguridad.esAdmin(Session["usuario"]))
+                if (Seguridad.sesionActiva(Session["usuario"]))
                 {
-                    FiltroAvanzado = false;
-                    ArticulosNegocio negocio = new ArticulosNegocio();
-                    Session.Add("listaDeArticulos", negocio.listar());
-                    dgvProductos.DataSource = Session["listaDeArticulos"];
-                    dgvProductos.DataBind();
-                }
-                else
-                {
-                    Session.Add("error", "Debes tener perfil de admin para poder ingresar");
-                    Response.Redirect("/Error.aspx");
+                    if (Seguridad.esAdmin(Session["usuario"]))
+                    {
+                        FiltroAvanzado = false;
+                        ArticulosNegocio negocio = new ArticulosNegocio();
+                        Session.Add("listaDeArticulos", negocio.listar());
+                        dgvProductos.DataSource = Session["listaDeArticulos"];
+                        dgvProductos.DataBind();
+                    }
+                    else
+                    {
+                        Session.Add("error", "Debes tener perfil de admin para poder ingresar");
+                        Response.Redirect("/Error.aspx", false);
+                    }
                 }
             }
             catch (Exception ex)
@@ -49,7 +52,7 @@ namespace CatalogoWebMaxP
                     Response.Redirect("FormularioProductos.aspx?id=" + id1);
                 }
                 string id = dgvProductos.SelectedDataKey.Value.ToString();
-                Response.Redirect("FormularioProductos.aspx?id=" + id);            
+                Response.Redirect("FormularioProductos.aspx?id=" + id, false);            
             }
             catch (Exception ex)
             {
