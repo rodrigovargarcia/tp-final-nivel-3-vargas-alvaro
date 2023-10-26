@@ -12,14 +12,14 @@ namespace CatalogoWebMaxP
 {
     public partial class FormularioProductos : System.Web.UI.Page
     {
-        public bool ConfirmaEliminacion { get; set; }
+        public bool NoElimina { get; set; }
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {        
             try
             {
                 if (!IsPostBack)
-                {
-                    ConfirmaEliminacion = false;
+                {                  
+                    NoElimina = false;
                     txtId.Enabled = false;
                     MarcasNegocio negocio = new MarcasNegocio();
                     List<Marcas> listaMar = negocio.listar();
@@ -58,7 +58,7 @@ namespace CatalogoWebMaxP
                 }
                 else
                 {
-                    btnEliminar.Visible = false;
+                    NoElimina = true;
                 }
             }
             catch (Exception ex)

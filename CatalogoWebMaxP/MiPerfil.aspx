@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         function mostrarImagen() {
-            alert("Evento onchange se ha disparado");
+            /*alert("Evento onchange se ha disparado");*/
             var input = document.getElementById("ContentPlaceHolder1_txtImagenPerfil");
             var img = document.getElementById("<%= imgNuevoPerfil.ClientID %>");
 

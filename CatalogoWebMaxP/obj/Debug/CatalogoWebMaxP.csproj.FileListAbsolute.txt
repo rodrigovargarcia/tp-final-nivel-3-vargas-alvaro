@@ -61,3 +61,4 @@ C:\Users\PC\Desktop\ProyectoFinalMax\CatalogoWebMaxP\bin\Dominio.dll
 C:\Users\PC\Desktop\ProyectoFinalMax\CatalogoWebMaxP\bin\negocio.dll
 C:\Users\PC\Desktop\ProyectoFinalMax\CatalogoWebMaxP\bin\Dominio.pdb
 C:\Users\PC\Desktop\ProyectoFinalMax\CatalogoWebMaxP\bin\negocio.pdb
+C:\Users\PC\Desktop\ProyectoFinalMax\CatalogoWebMaxP\bin\negocio.dll.config

@@ -5,7 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" ID="SriptManager1" />
     <div class="container">
-        <h1>Producto: <asp:Label ID="lblNombreProd" runat="server" /></h1>
+        <h1>Producto:
+            <asp:Label ID="lblNombreProd" runat="server" /></h1>
     </div>
     <div class="container">
         <div class="row py-5 mb-3">
@@ -61,26 +62,31 @@
             <div class="col-md-4">
                 <asp:Button Text="Aceptar" ID="btnAceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" runat="server" />
             </div>
+            <%if(!NoElimina)
+            { %>
             <div class="col-md-4">
-                <asp:Button type="button" id="btnEliminar" runat="server" class="btn btn-danger" data-bs-toggle="modal" Text="Eliminar" data-bs-target="#myModal"></asp:Button>
+                <button type="button" class="btn btn-danger" CssClass="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar</button>
             </div>
+            <% }%>
         </div>
-        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">¡Cuidado!</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">¡Cuidado!</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
-                        ¿Estás seguro de eliminar este artículo? <br /> Si continúa, el artículo se eliminará permanentemente.
+                        ¿Estás seguro de eliminar este artículo?<br />
+                        Si continúa, el artículo se eliminará permanentemente.
                     </div>
                     <div class="modal-footer justify-content-between">
-                        <asp:Button Text="Sí" ID="btnConfirmaEliminacion" OnClick="btnConfirmaEliminacion_Click" CssClass="btn btn-danger" runat="server" />
-                        <a href="#" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</a>                        
+                        <asp:Button Text="Si" ID="btnConfirmaEliminacion" CssClass="btn btn-danger" OnClick="btnConfirmaEliminacion_Click" runat="server" />
+                        <a href="/ListadoProductos.aspx" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </asp:Content>
